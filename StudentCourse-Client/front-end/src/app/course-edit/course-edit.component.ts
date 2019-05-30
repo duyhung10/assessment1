@@ -88,8 +88,18 @@ export class CourseEditComponent implements OnInit, OnDestroy {
     console.log(this.listIdStudentSelected);
   }
 
-  onEditCourse(){
+  editInfoCourse(){
+    if(this.formCourse.controls['startDate'].value){
+      this.course.startDate = this.dateFormat(this.formCourse.controls['startDate'].value);
+    }
+    if(this.formCourse.controls['endDate'].value){
+      this.course.endDate = this.dateFormat(this.formCourse.controls['endDate'].value);
+    }
+  }
 
+  onEditCourse(){
+    this.editInfoCourse();
+    
     // Xóa sinh viên khỏi khóa học
     for(let id of this.listIdStudentSelected){
       let student = new Student();

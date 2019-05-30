@@ -1,5 +1,5 @@
 <div class="container">
-  
+  <form [formGroup]="formCourse">
     <mat-card>
       <div style="text-align: center">
         <mat-card-title><b>Thông tin khóa học</b></mat-card-title>
@@ -22,26 +22,22 @@
               <input matInput type="text" [(ngModel)]="course.fee" [ngModelOptions]="{standalone: true}"  />
             </mat-form-field>
           </div>
-          <!-- <div class="col-xs-12 col-sm-12 col-md-12">
-            <form [formGroup]="formCourse">
-              <div class="col-xs-12 col-sm-12 col-md-6">
-                <br/>
-                <mat-form-field class="form-field-control">
-                  <input matInput [matDatepicker]="picker1" placeholder="Ngày bắt đầu" formControlName="startDate">
-                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field>
-              </div>
-              <div class="col-xs-12 col-sm-12 col-md-6">
-                <br/>
-                <mat-form-field class="form-field-control">
-                  <input matInput [matDatepicker]="picker2" placeholder="Ngày kết thúc" formControlName="endDate">
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
-                </mat-form-field>
-              </div>
-            </form>
-          </div> -->
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <br/>
+            <mat-form-field class="form-field-control">
+              <input matInput [matDatepicker]="picker1" placeholder="Ngày bắt đầu" formControlName="startDate">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <br/>
+            <mat-form-field class="form-field-control">
+              <input matInput [matDatepicker]="picker2" placeholder="Ngày kết thúc" formControlName="endDate">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
 
           <div class="col-xs-12 col-sm-12 col-md-12">
             <br/>
@@ -75,4 +71,5 @@
         <button class="button-custom" mat-raised-button color="primary" (click)="onEditCourse()">Xác nhận</button>
       </div>
     </mat-card>
-  </div>
+  </form>  
+</div>
