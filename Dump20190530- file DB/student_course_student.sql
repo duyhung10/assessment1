@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `course`
+-- Table structure for table `student`
 --
 
-DROP TABLE IF EXISTS `course`;
+DROP TABLE IF EXISTS `student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `course` (
-  `course_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `student` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
-  `fee` int(11) DEFAULT NULL,
-  `start_date` varchar(45) DEFAULT NULL,
-  `end_date` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`course_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `course`
+-- Dumping data for table `student`
 --
 
-LOCK TABLES `course` WRITE;
-/*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1,'Lap trinh huong doi tuong',66,'Wed Jul 10 2019','Fri Sep 20 2019'),(2,'Cong nghe phan mem',25,'Wed Jul 10 2019','Fri Sep 20 2019'),(3,'Co so du lieu',30,'Wed Jul 10 2019','Fri Sep 20 2019'),(4,'Quan tri mang',18,'Wed Jul 10 2019','Fri Sep 20 2019'),(5,'Thiet ke giao dien',18,'Wed Jul 10 2019','Fri Sep 20 2019'),(6,'Android basic',20,'Wed Jul 10 2019','Fri Sep 20 2019'),(7,'HTML CSS basic',20,'Wed Jul 10 2019','Fri Sep 20 2019'),(8,'Lap trinh PHP',25,'Wed Jul 10 2019','Fri Sep 20 2019'),(27,'Lap trinh IOS',95,'Thu Aug 15 2019','Sat Oct 12 2019');
-/*!40000 ALTER TABLE `course` ENABLE KEYS */;
+LOCK TABLES `student` WRITE;
+/*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (1,'Tuan','tuan@gmail.com'),(2,'Hoang','hoang@gmail.com'),(51,'Le Duy Hung','leduyhung102@gmail.com'),(54,'Le Duy Hung','duyhungdh10@gmail.com');
+/*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-30 11:56:04
+-- Dump completed on 2019-05-30 16:03:37

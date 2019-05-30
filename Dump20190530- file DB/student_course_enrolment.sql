@@ -16,28 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `student`
+-- Table structure for table `enrolment`
 --
 
-DROP TABLE IF EXISTS `student`;
+DROP TABLE IF EXISTS `enrolment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `student` (
-  `student_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+CREATE TABLE `enrolment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_EN_1_idx` (`student_id`),
+  KEY `FK_EN_2_idx` (`course_id`),
+  CONSTRAINT `FK_EN_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`),
+  CONSTRAINT `FK_EN_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `student`
+-- Dumping data for table `enrolment`
 --
 
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,'Tuan','tuan@gmail.com'),(2,'Hoang','hoang@gmail.com'),(51,'Le Duy Hung','leduyhung102@gmail.com');
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
+LOCK TABLES `enrolment` WRITE;
+/*!40000 ALTER TABLE `enrolment` DISABLE KEYS */;
+INSERT INTO `enrolment` VALUES (1,1,2),(2,1,3),(3,2,2),(17,51,1),(18,51,5),(30,54,4),(31,54,7),(32,54,3),(33,54,1),(34,54,2);
+/*!40000 ALTER TABLE `enrolment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-30 11:56:05
+-- Dump completed on 2019-05-30 16:03:36

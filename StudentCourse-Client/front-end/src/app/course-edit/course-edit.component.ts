@@ -119,7 +119,7 @@ export class CourseEditComponent implements OnInit, OnDestroy {
       this.course = data;
       console.log(this.course);
 
-      alert("Cập nhật thông tin sinh viên thành công");
+      alert("Cập nhật thông tin khóa học thành công");
       this.router.navigateByUrl('/courses/' + this.course.courseId + "/detail");
     });
   }
